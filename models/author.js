@@ -16,12 +16,12 @@ AuthorSchema.virtual("name").get(function () {
         fullname = `${this.family_name}, ${this.first_name}`;
     }
     return fullname;
-})
+});
 
 // Virtual for author's URL
 AuthorSchema.virtual("url").get(function () {
     // no arrow function as we'll need the this object
     return `/catalog/author/${this.id}`;
-})
+});
 
 module.exports = mongoose.model("Author", AuthorSchema);
